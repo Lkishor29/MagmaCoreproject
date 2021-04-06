@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+
+message SMFSessionRequest {
+	string subscriber_id = 1;
+}
+
+message UPFSessionResponse{
+	string subscriber_id = 1;
+}
+
+service Pipelined {
+	rpc Add(SMFSessionRequest) returns (UPFSessionResponse) {}
+}
